@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#a8001e">
+<title>Baby Shower de Carla Sofía</title>
+<style>
+:root{--wine:#a8001e;--wine2:#840018;--rose:#d46382;--rose2:#c75678;--pink:#f8d2de;--pale:#fff6f7;--cream:#fffaf8;--line:#edb1c1;--ink:#68414a;--muted:#8f6c74;--green:#77a944}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#f6e8ec}
+body{margin:0;min-height:100%;background:radial-gradient(circle at 50% 0,#fff9fa 0,#f7e9ed 52%,#efdce2 100%);font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+.page{width:min(100%,580px);margin:0 auto;padding:20px 20px 54px}
+.invite-wrap{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:26px;box-shadow:0 22px 65px rgba(91,0,23,.18);background:var(--pink)}
+.invite-wrap>img{width:100%;height:100%;display:block}
+.hit{position:absolute;display:block;border:0;padding:0;background:transparent;opacity:0}
+.hit:focus-visible{opacity:1;outline:3px solid #fff;outline-offset:-5px;border-radius:12px}
+.google{left:4.26%;top:84.90%;width:27.96%;height:4.38%}
+.apple{left:34.07%;top:84.90%;width:27.96%;height:4.38%}
+.amazon{left:75%;top:66.35%;width:23.52%;height:19.58%}
+.rsvp{position:relative;margin-top:26px;padding:38px 30px 30px;overflow:hidden;background:rgba(255,250,248,.97);border:1px solid rgba(232,167,183,.78);border-radius:28px;box-shadow:0 18px 52px rgba(91,0,23,.12)}
+.rsvp:before{content:"";position:absolute;inset:0 0 auto;height:7px;background:linear-gradient(90deg,var(--wine),#e27696,var(--green),#e27696,var(--wine))}
+.berry{position:absolute;width:54px;height:64px;pointer-events:none}
+.berry.one{right:20px;top:18px;transform:rotate(8deg)}
+.berry.two{right:68px;top:32px;width:34px;height:41px;transform:rotate(-13deg);opacity:.88}
+.eyebrow{margin:0 92px 8px 0;color:var(--green);font-size:.73rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0 86px 10px 0;color:var(--wine);font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,7.3vw,2.65rem);line-height:1.02;letter-spacing:-.025em}
+.intro{margin:0 0 26px;font-size:1.04rem;line-height:1.55;color:#76515a}
+.field{margin:0 0 20px}
+label,.legend{display:block;margin:0 0 9px;font-size:.94rem;font-weight:800;color:#694049}
+.required{color:var(--wine)}
+input[type="text"]{width:100%;height:58px;padding:0 17px;border:1.5px solid #e4bec8;border-radius:16px;background:#fff;color:#54343b;font:inherit;font-size:1rem;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;transition:border-color .2s,box-shadow .2s}
+input[type="text"]::placeholder{color:#b49fa4}
+input[type="text"]:focus{outline:0;border-color:var(--rose);box-shadow:0 0 0 4px rgba(212,99,130,.14)}
+.attendance{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice span{display:flex;align-items:center;justify-content:center;min-height:64px;padding:12px 10px;border:1.5px solid #e4bec8;border-radius:17px;background:#fff;color:#714c55;font-weight:800;text-align:center;cursor:pointer;transition:.2s ease}
+.choice input:checked+span{border-color:var(--rose);background:#f8e2e9;color:var(--wine);box-shadow:0 0 0 2px rgba(212,99,130,.08)}
+.choice input:focus-visible+span{outline:3px solid rgba(212,99,130,.28);outline-offset:2px}
+.guests{display:grid;gap:10px}
+.guest-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.remove{width:44px;border:1.5px solid #e4bec8;border-radius:14px;background:#fff5f6;color:var(--wine);font-size:1.3rem;cursor:pointer}
+.add{width:100%;margin-top:11px;padding:14px;border:1.5px dashed #d79bad;border-radius:15px;background:#fff9fa;color:#9c4e64;font-size:.93rem;font-weight:800;cursor:pointer}
+.add:hover{background:#fbeaf0}
+.hint{margin:10px 3px 0;color:var(--muted);font-size:.83rem;line-height:1.45}
+.submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:62px;margin-top:26px;padding:14px 18px;border:0;border-radius:18px;background:linear-gradient(135deg,var(--wine),#cc486d);color:#fff;font-size:1.04rem;font-weight:900;letter-spacing:.01em;cursor:pointer;box-shadow:0 12px 28px rgba(168,0,30,.23);transition:transform .15s,box-shadow .15s}
+.submit:hover{transform:translateY(-1px);box-shadow:0 15px 32px rgba(168,0,30,.27)}
+.submit:active{transform:translateY(0)}
+.whatsapp{width:23px;height:23px;display:block}
+.delivery{margin:15px 0 0;text-align:center;color:#98767e;font-size:.78rem;line-height:1.45}
+.number{font-weight:800;color:#7a4c57;white-space:nowrap}
+.hidden{display:none!important}
+.error{display:none;margin:0 0 16px;padding:11px 13px;border-radius:12px;background:#fff0f1;color:#9f1732;font-size:.86rem;font-weight:700}
+.error.show{display:block}
+@media(max-width:560px){.page{padding:0 0 34px}.invite-wrap{border-radius:0;box-shadow:none}.rsvp{margin:20px 12px 0;padding:34px 20px 26px;border-radius:26px}.attendance{gap:9px}.choice span{font-size:.91rem}.berry.one{right:16px}.berry.two{right:58px}}
+@media(max-width:370px){h1{margin-right:58px;font-size:1.85rem}.eyebrow{margin-right:58px}.berry.one{width:46px;height:55px}.berry.two{display:none}.attendance{grid-template-columns:1fr}}
+@media print{.rsvp{display:none}.page{width:6.75in;padding:0}.invite-wrap{width:6.75in;height:12in;border-radius:0;box-shadow:none}}
+
+.submit[disabled]{cursor:wait;opacity:.72;transform:none;box-shadow:none}
+.success{display:none;margin:20px 0 0;padding:18px;border:1px solid #a9cf8c;border-radius:16px;background:#f1faec;color:#45682b;text-align:center;line-height:1.5}
+.success.show{display:block}
+.honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.admin-link{display:block;margin:20px auto 0;width:max-content;color:#a8848d;font-size:.75rem;text-decoration:none}
+.admin-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<main class="page">
+<section class="invite-wrap" aria-label="Invitación del baby shower de Carla Sofía">
+<img alt="Baby shower de Carla Sofía. Domingo 13 de diciembre a las 2:00 pm." src="./invite.webp">
+<a class="hit google" href="https://maps.app.goo.gl/QnPT4v5UrZNUR36b9?g_st=iw" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps"></a>
+<a class="hit apple" href="https://maps.apple/p/7vnJWy_VERbsEY" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Apple Maps"></a>
+<a class="hit amazon" href="https://www.amazon.com.mx/hz/wishlist/ls/1NC9CBE7RMXJS?ref_=wl_share" target="_blank" rel="noopener noreferrer" aria-label="Abrir la mesa de regalos de Amazon"></a>
+</section>
+<section class="rsvp" aria-labelledby="rsvp-title">
+<svg class="berry one" viewBox="0 0 64 76" aria-hidden="true"><path d="M32 17C16 4 3 14 6 31c3 18 18 35 26 42 8-7 23-24 26-42 3-17-10-27-26-14z" fill="#c90028"/><path d="M32 17 20 4l2 15L8 13l13 14 11-10 10 10 14-14-14 6 2-15z" fill="#75a947"/><g fill="#ffe49a"><ellipse cx="19" cy="33" rx="2" ry="4"/><ellipse cx="32" cy="29" rx="2" ry="4"/><ellipse cx="45" cy="33" rx="2" ry="4"/><ellipse cx="25" cy="48" rx="2" ry="4"/><ellipse cx="39" cy="48" rx="2" ry="4"/><ellipse cx="32" cy="61" rx="2" ry="4"/></g></svg>
+<svg class="berry two" viewBox="0 0 64 76" aria-hidden="true"><path d="M32 17C16 4 3 14 6 31c3 18 18 35 26 42 8-7 23-24 26-42 3-17-10-27-26-14z" fill="#c90028"/><path d="M32 17 20 4l2 15L8 13l13 14 11-10 10 10 14-14-14 6 2-15z" fill="#75a947"/><g fill="#ffe49a"><ellipse cx="19" cy="33" rx="2" ry="4"/><ellipse cx="32" cy="29" rx="2" ry="4"/><ellipse cx="45" cy="33" rx="2" ry="4"/><ellipse cx="25" cy="48" rx="2" ry="4"/><ellipse cx="39" cy="48" rx="2" ry="4"/></g></svg>
+<p class="eyebrow">Baby shower de Carla Sofía</p>
+<h1 id="rsvp-title">Confirma tu asistencia</h1>
+<p class="intro">Nos encantará compartir este día contigo. Escribe tu nombre y, si asistirás acompañado, agrega el nombre de cada invitado.</p>
+<form id="rsvp-form" novalidate>
+<div id="form-error" class="error" role="alert">Completa los datos marcados para continuar.</div>
+<div class="field"><label for="full-name">Tu nombre y apellido <span class="required">*</span></label><input id="full-name" name="full-name" type="text" autocomplete="name" placeholder="Ej. María López García" required></div>
+<fieldset class="field" style="border:0;padding:0;margin-inline:0"><legend class="legend">¿Asistirás? <span class="required">*</span></legend><div class="attendance"><label class="choice"><input type="radio" name="attendance" value="Sí asistiré" required><span>🍓&nbsp; Sí asistiré</span></label><label class="choice"><input type="radio" name="attendance" value="No podré asistir" required><span>No podré asistir</span></label></div></fieldset>
+<div id="guest-section" class="field"><label for="guest-1">Nombre y apellido de tus invitados <span class="required">*</span></label><div id="guest-list" class="guests"><div class="guest-row"><input id="guest-1" class="guest-name" type="text" placeholder="Nombre y apellido del invitado 1" required></div></div><button id="add-guest" class="add" type="button">+ Agregar otro invitado</button><p class="hint">Si vas sin acompañantes, escribe <strong>“Sin invitados”</strong>.</p></div>
+<button class="submit" type="submit"><span aria-hidden="true" style="font-size:1.35rem">✓</span>Enviar confirmación</button>
+<p class="delivery">Tu respuesta quedará registrada de forma privada para los anfitriones.</p><div id="success" class="success" role="status" aria-live="polite"><strong>¡Confirmación registrada!</strong><br>Gracias por responder. Tu información quedó guardada.</div><div class="honeypot" aria-hidden="true"><label>Deja este campo vacío<input id="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+</form>
+</section>
+<a class="admin-link" href="./admin/">Administración privada</a>
+</main>
+<script>
+(()=>{
+const API_URL='https://doiuahyhiinpcokjvmlk.supabase.co/functions/v1/baby-shower-rsvp';
+const form=document.querySelector('#rsvp-form');
+const guestSection=document.querySelector('#guest-section');
+const list=document.querySelector('#guest-list');
+const add=document.querySelector('#add-guest');
+const errorBox=document.querySelector('#form-error');
+const success=document.querySelector('#success');
+const submit=form.querySelector('.submit');
+const radios=[...document.querySelectorAll('input[name="attendance"]')];
+const clean=s=>s.trim().replace(/\s+/g,' ');
+const isFullName=s=>{const v=clean(s);return v.toLocaleLowerCase('es-MX')==='sin invitados'||v.split(' ').length>=2;};
+function showError(message){errorBox.textContent=message;errorBox.classList.add('show');success.classList.remove('show');}
+function setGuestState(){
+ const selected=document.querySelector('input[name="attendance"]:checked');
+ const declined=selected&&selected.value==='No podré asistir';
+ guestSection.classList.toggle('hidden',!!declined);
+ const first=guestSection.querySelector('.guest-name');
+ if(first) first.required=!declined;
+}
+radios.forEach(r=>r.addEventListener('change',setGuestState));
+add.addEventListener('click',()=>{
+ const count=list.querySelectorAll('.guest-row').length+1;
+ const row=document.createElement('div');row.className='guest-row';
+ row.innerHTML=`<input class="guest-name" type="text" placeholder="Nombre y apellido del invitado ${count}"><button class="remove" type="button" aria-label="Quitar invitado">×</button>`;
+ row.querySelector('.remove').addEventListener('click',()=>row.remove());
+ list.appendChild(row);row.querySelector('input').focus();
+});
+form.addEventListener('submit',async e=>{
+ e.preventDefault();setGuestState();errorBox.classList.remove('show');success.classList.remove('show');
+ if(!form.checkValidity()){showError('Completa los datos marcados para continuar.');form.reportValidity();return;}
+ const fullName=clean(document.querySelector('#full-name').value);
+ const attendanceText=document.querySelector('input[name="attendance"]:checked').value;
+ let guests=[...document.querySelectorAll('.guest-name')].map(i=>clean(i.value)).filter(Boolean);
+ if(!isFullName(fullName)){showError('Escribe tu nombre y apellido completos.');document.querySelector('#full-name').focus();return;}
+ if(attendanceText==='Sí asistiré'){
+   const realGuests=guests.filter(g=>g.toLocaleLowerCase('es-MX')!=='sin invitados');
+   if(guests.length===0){showError('Agrega el nombre y apellido de tus invitados o escribe “Sin invitados”.');return;}
+   if(realGuests.some(g=>!isFullName(g))){showError('Escribe el nombre y apellido completos de cada invitado.');return;}
+   guests=realGuests;
+ } else guests=[];
+ submit.disabled=true;const old=submit.innerHTML;submit.textContent='Enviando…';
+ try{
+   const response=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fullName,attendance:attendanceText==='Sí asistiré'?'yes':'no',guests,website:document.querySelector('#website').value})});
+   const data=await response.json().catch(()=>({}));
+   if(!response.ok) throw new Error(data.error||'No se pudo guardar la confirmación.');
+   form.reset();setGuestState();success.classList.add('show');success.scrollIntoView({behavior:'smooth',block:'center'});
+ }catch(err){showError(err.message||'No se pudo guardar la confirmación. Intenta de nuevo.');}
+ finally{submit.disabled=false;submit.innerHTML=old;}
+});
+setGuestState();
+})();
+</script>
+</body>
+</html>
